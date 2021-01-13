@@ -9,7 +9,7 @@ This Terraform Module will upgrade the Kubernetes Version of your AKS default no
 
 ## Releated Article
 
-On [Medium](https://medium.com/@dennis.riemenschneider/how-to-upgrade-the-kubernetes-version-of-your-aks-default-node-pool-with-terraform-b7311d76041b)
+On [Medium](https://dennis-riemenschneider.medium.com/how-to-upgrade-the-kubernetes-version-of-your-aks-default-node-pool-with-terraform-b7311d76041b)
 
 ## Requirements
 
