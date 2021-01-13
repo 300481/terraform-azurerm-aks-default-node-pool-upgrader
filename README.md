@@ -52,6 +52,7 @@ alias terraform='podman run --env-file <(env | grep -v PATH) -it --rm -v $PWD:$P
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| default\_pool\_name | The name of the default node pool. | `string` | n/a | yes |
 | kubernetes\_cluster\_name | The name of the Kubernetes Cluster. | `string` | n/a | yes |
 | resource\_group\_name | The name of the Resource Group which contains the Kubernetes Cluster. | `string` | n/a | yes |
 | kubernetes\_node\_version | The Kubernetes Version for the default node pool. | `string` | `"empty"` | no |

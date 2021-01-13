@@ -16,7 +16,7 @@ resource "null_resource" "node_pool_version" {
       ARM_CLIENT_SECRET_URL_ENCODED = urlencode(data.external.client_secret.result.clientsecret)
       RESOURCE_GROUP_NAME           = var.resource_group_name
       CLUSTER_NAME                  = var.kubernetes_cluster_name
-      DEFAULT_POOL_NAME             = "default"
+      DEFAULT_POOL_NAME             = var.default_pool_name
     }
     interpreter = ["/bin/sh", "-c"]
   }
