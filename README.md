@@ -35,14 +35,16 @@ alias terraform='docker run --env-file <(env | grep -v PATH) -it --rm -v $PWD:$P
 alias terraform='podman run --env-file <(env | grep -v PATH) -it --rm -v $PWD:$PWD:rw,Z -w $PWD hashicorp/terraform:0.14.4'
 ```
 
-## Providers
+## Terraform Specs
+
+### Providers
 
 | Name | Version |
 |------|---------|
 | external | n/a |
 | null | n/a |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -50,7 +52,7 @@ alias terraform='podman run --env-file <(env | grep -v PATH) -it --rm -v $PWD:$P
 | resource\_group\_name | The name of the Resource Group which contains the Kubernetes Cluster. | `string` | n/a | yes |
 | kubernetes\_node\_version | The Kubernetes Version for the default node pool. | `string` | `"empty"` | no |
 
-## Outputs
+### Outputs
 
 No output.
 
@@ -64,7 +66,7 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
 }
 
 module "aks_default_node_pool_upgrader" {
-  source = "github.com/300481/aks-default-node-pool-upgrader?ref=main"
+  source = "github.com/300481/aks-default-node-pool-upgrader?ref=v0.0.1"
 
   kubernetes_node_version = "1.19.3"
   resource_group_name     = "The_RG_of_your_cluster"
