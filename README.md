@@ -7,6 +7,10 @@ This Terraform Module will upgrade the Kubernetes Version of your AKS default no
 * Terraform 0.14.4
 * AzureRM Provider 2.41.0
 
+## Releated Article
+
+On [Medium](https://medium.com/@dennis.riemenschneider/how-to-upgrade-the-kubernetes-version-of-your-aks-default-node-pool-with-terraform-b7311d76041b)
+
 ## Requirements
 
 ### Terraform Authentication for the AzureRM Provider
