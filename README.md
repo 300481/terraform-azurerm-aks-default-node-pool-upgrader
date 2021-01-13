@@ -70,7 +70,7 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
 }
 
 module "aks_default_node_pool_upgrader" {
-  source = "github.com/300481/aks-default-node-pool-upgrader?ref=v0.0.1"
+  source = "github.com/300481/aks-default-node-pool-upgrader?ref=v0.0.2"
 
   kubernetes_node_version = "1.19.3"
   resource_group_name     = "The_RG_of_your_cluster"
