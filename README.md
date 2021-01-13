@@ -76,6 +76,7 @@ module "aks_default_node_pool_upgrader" {
   kubernetes_node_version = "1.19.3"
   resource_group_name     = "The_RG_of_your_cluster"
   kubernetes_cluster_name = azurerm_kubernetes_cluster.kubernetes_cluster.name # !!! IMPORTANT use the resource name attribute to link the dependency to the cluster
+  default_pool_name       = "default"
 }
 ```
 
