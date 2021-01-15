@@ -2,10 +2,10 @@
 
 This Terraform Module will upgrade the Kubernetes Version of your AKS default node pool.
 
-## Tested Versions (at Jan. 13th 2021)
+## Tested Versions (at Jan. 15th 2021)
 
 * Terraform 0.14.4
-* AzureRM Provider 2.41.0
+* AzureRM Provider 2.43.0
 
 ## Releated Article
 
@@ -70,13 +70,13 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
   ...
 }
 
-module "aks_default_node_pool_upgrader" {
-  source = "github.com/300481/aks-default-node-pool-upgrader?ref=v0.0.2"
-
-  kubernetes_node_version = "1.19.3"
-  resource_group_name     = "The_RG_of_your_cluster"
-  kubernetes_cluster_name = azurerm_kubernetes_cluster.kubernetes_cluster.name # !!! IMPORTANT use the resource name attribute to link the dependency to the cluster
+module "aks-default-node-pool-upgrader" {
+  source  = "300481/aks-default-node-pool-upgrader/azurerm"
+  version = "0.0.4"
   default_pool_name       = "default"
+  kubernetes_cluster_name = azurerm_kubernetes_cluster.kubernetes_cluster.name
+  resource_group_name     = "The_RG_of_your_cluster"
+  kubernetes_node_version = "1.19.3"
 }
 ```
 
