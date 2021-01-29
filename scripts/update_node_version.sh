@@ -9,10 +9,6 @@ if [[ ${KUBERNETES_NODE_VERSION} == "empty" ]] ; then
     exit 0
 fi
 
-# install needed packages
-echo "Install neccessary packages."
-apk add curl jq
-
 # Get Token (valid for 1 hour)
 echo "Authenticate for Azure REST API."
 # https://docs.microsoft.com/en-us/rest/api/azure/#create-the-request

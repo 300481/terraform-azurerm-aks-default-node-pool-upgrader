@@ -2,10 +2,10 @@
 
 This Terraform Module will upgrade the Kubernetes Version of your AKS default node pool.
 
-## Tested Versions (at Jan. 15th 2021)
+## Tested Versions (at Jan. 28th 2021)
 
-* Terraform 0.14.4
-* AzureRM Provider 2.43.0
+* Terraform 0.14.5
+* AzureRM Provider 2.45.0
 
 ## Releated Article
 
@@ -34,9 +34,9 @@ you must adjust the volume mounts and/or the user to run the container as.
 
 ```bash
 # with docker
-alias terraform='docker run --env-file <(env | grep -v PATH) -it --rm -v $PWD:$PWD:rw,Z -w $PWD hashicorp/terraform:0.14.4'
+alias terraform='docker run --env-file <(env | grep -v PATH) -it --rm -v $PWD:$PWD:rw,Z -w $PWD ghcr.io/300481/terraform:0.14.5'
 # with podman
-alias terraform='podman run --env-file <(env | grep -v PATH) -it --rm -v $PWD:$PWD:rw,Z -w $PWD hashicorp/terraform:0.14.4'
+alias terraform='podman run --env-file <(env | grep -v PATH) -it --rm -v $PWD:$PWD:rw,Z -w $PWD ghcr.io/300481/terraform:0.14.5'
 ```
 
 ## Terraform Specs
@@ -72,7 +72,7 @@ resource "azurerm_kubernetes_cluster" "kubernetes_cluster" {
 
 module "aks-default-node-pool-upgrader" {
   source  = "300481/aks-default-node-pool-upgrader/azurerm"
-  version = "0.0.4"
+  version = "0.0.5"
   default_pool_name       = "default"
   kubernetes_cluster_name = azurerm_kubernetes_cluster.kubernetes_cluster.name
   resource_group_name     = "The_RG_of_your_cluster"
