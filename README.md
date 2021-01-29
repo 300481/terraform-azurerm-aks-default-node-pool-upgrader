@@ -87,3 +87,11 @@ Your Cluster must be created before using this module.
 This can be achieved using the name attribute of your cluster resource or
 
 the depends_on argument filled with the kubernetes_cluster resource.
+
+Following Linux packages are needed:
+
+* jq
+
+* curl
+
+When using the container image `ghcr.io/300481/terraform` they are already included.
